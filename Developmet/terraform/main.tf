@@ -1,7 +1,7 @@
 ###### Security################################################
 
 # Description : This Module creates KMS Key
-module "KMS" {
+/*module "KMS" {
   source = "./modules/Security/kms"
   Default_Tags = var.Default_Tags
   KMS_Key_Alias = "kms-${var.App_ClusterCode}-${var.App_EnvironmentType}-${var.AWS_Region_Code}-${var.App_AcronymCode}-03"
@@ -11,7 +11,7 @@ module "KMS" {
 }
 
 # Description : The Module creates Secret manager for RDS master and application database credentials
-/*module "Secret_Manager" {
+module "Secret_Manager" {
   source = "./modules/Security/secretmanager"
   Secret_Manager_Name="asm-${var.App_ClusterCode}-${var.App_EnvironmentType}-${var.AWS_Region_Code}-${var.App_AcronymCode}-manager-02"
   App_EnvironmentType = var.App_EnvironmentType

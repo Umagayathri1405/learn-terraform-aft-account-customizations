@@ -1,7 +1,7 @@
 ###### Security################################################
 
 # Description : This Module creates KMS Key
-module "KMS" {
+/*module "KMS" {
   source = "./modules/Security/kms"
   Default_Tags = var.Default_Tags
   KMS_Key_Alias = "kms-${var.App_ClusterCode}-${var.App_EnvironmentType}-${var.AWS_Region_Code}-${var.App_AcronymCode}-03"
@@ -11,7 +11,7 @@ module "KMS" {
 }
 
 # Description : The Module creates Secret manager for RDS master and application database credentials
-/*module "Secret_Manager" {
+  module "Secret_Manager" {
   source = "./modules/Security/secretmanager"
   Secret_Manager_Name="asm-${var.App_ClusterCode}-${var.App_EnvironmentType}-${var.AWS_Region_Code}-${var.App_AcronymCode}-manager-02"
   App_EnvironmentType = var.App_EnvironmentType
@@ -21,12 +21,12 @@ module "KMS" {
   Secret_Recovery_Window_In_Days = var.Secret_Recovery_Window_In_Days
   KMS_Key_Secret = module.KMS.KMS_Key_ARN
   App_Seqnumber = var.App_SequenceNumber
-}*/
+}
 
 
 # Description : This Module creates the VPC, Subnets, internet and NAT Gateway
 
-/*module "VPC" {
+  module "VPC" {
   source = "./modules/Network & Content_Delivery/vpc"
   Default_Tags              = var.Default_Tags
   vpc_cidr                  = var.VPC_CIDR
@@ -83,7 +83,7 @@ module "EC2_Autoscaling" {
 
 # Description : This Module creates S3 Bucket for AWS resources logs
 
-module "S3_Log_Bucket" {
+/*module "S3_Log_Bucket" {
   source                            = "./modules/Storage/s3log"
   s3_Log_Bucket_name                = lower("s3b-${var.App_ClusterCode}-${var.App_EnvironmentType}-${var.AWS_Region_Code}-${var.App_AcronymCode}-log-${var.App_SequenceNumber}")
   Default_Tags                      = var.Default_Tags
