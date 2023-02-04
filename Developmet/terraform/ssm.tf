@@ -1,7 +1,7 @@
 data "aws_caller_identity" "current" {}
 
 resource "aws_ssm_parameter" "foo" {
-  name  = "Account_ID"
+  name  = "/Account_ID"
   type  = "String"
   value = "${data.aws_caller_identity.current.account_id}"
 }
