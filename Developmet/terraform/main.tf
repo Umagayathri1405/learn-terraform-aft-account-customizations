@@ -23,7 +23,6 @@ module "Secret_Manager" {
   App_Seqnumber = var.App_SequenceNumber
 }*/
 
-
 # Description : This Module creates the VPC, Subnets, internet and NAT Gateway
 
 module "VPC" {
