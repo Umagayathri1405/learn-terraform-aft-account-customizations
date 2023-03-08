@@ -21,7 +21,7 @@ module "Secret_Manager" {
   Secret_Recovery_Window_In_Days = var.Secret_Recovery_Window_In_Days
   KMS_Key_Secret = module.KMS.KMS_Key_ARN
   App_Seqnumber = var.App_SequenceNumber
-}*/
+}
 
 # Description : This Module creates the VPC, Subnets, internet and NAT Gateway
 
@@ -41,7 +41,7 @@ module "VPC" {
 
 # Description : This Module creates EC2 in single availability zone
 
-/*module "EC2" {
+module "EC2" {
   source                 = "./modules/Compute/ec2"
   Securitygroup_EC2_Name= lower("esg-${var.App_ClusterCode}-${var.App_EnvironmentType}-${var.AWS_Region_Code}-${var.App_AcronymCode}-${var.App_SequenceNumber}")
   Default_Tags           = var.Default_Tags
