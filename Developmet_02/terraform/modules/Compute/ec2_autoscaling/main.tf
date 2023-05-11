@@ -77,7 +77,7 @@ resource "aws_autoscaling_group" "asg" {
     preferences {
       min_healthy_percentage = 90
       instance_warmup = "300"
-      skip_matching          = true
+      #skip_matching          = true
     }
     triggers = ["tag"]
   }
